@@ -17,6 +17,9 @@ class Patient(models.Model):
     address = models.TextField()
     medical_history = models.TextField()
 
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
+
 
 class Insurance(models.Model):
     ''' This model represents an insurance policy for a patient and has fields '''
@@ -26,6 +29,9 @@ class Insurance(models.Model):
     provider = models.CharField(max_length=100)
     policy_number = models.CharField(max_length=100)
     expiration_date = models.DateField()
+
+    def __str__(self):
+        return f'{self.patient} - {self.provider}'
 
 
 class MedicalRecord(models.Model):
@@ -37,3 +43,6 @@ class MedicalRecord(models.Model):
     diagnosis = models.TextField()
     treatment = models.TextField()
     follow_up_date = models.DateField()
+
+    def __str__(self):
+        return f'{self.patient} - {self.date}'
