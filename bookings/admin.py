@@ -7,9 +7,9 @@ from .models import Appointment, MedicalNote
 class AppointmentAdmin(admin.ModelAdmin):
     ''' This class-based view returns the details of a specific patient '''
     model = Appointment
-    list_display = ('id', 'patient', 'doctor', 'date',
-                    'time', 'duration', 'reason', 'status')
-    list_filter = ('status', 'doctor', 'date')
+    list_display = ('id', 'patient', 'doctor', 'appointment_date',
+                    'appointment_time', 'status')
+    list_filter = ('status', 'doctor', 'appointment_date')
     search_fields = ('patient__first_name', 'patient__last_name',
                      'doctor__first_name', 'doctor__last_name', 'reason')
     list_per_page = 25
