@@ -14,7 +14,12 @@ from rest_framework.routers import DefaultRouter
 #                     DoctorAvailabilityDetailView, DoctorAvailabilityView,
 #                     MedicalNoteDetailView,
 #                     MedicalNoteView)
-from .viewsets import DoctorViewSet, DepartmentViewSet, DoctorAvailabilityViewSet, MedicalNoteViewSet
+from .viewsets import (
+    DoctorViewSet,
+    DepartmentViewSet,
+    DoctorAvailabilityViewSet,
+    MedicalNoteViewSet
+)
 
 router = DefaultRouter()
 router.register('doctors', DoctorViewSet)

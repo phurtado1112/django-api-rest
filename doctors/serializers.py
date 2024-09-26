@@ -12,6 +12,13 @@ class DoctorSerializer(serializers.ModelSerializer):
         model = Doctor
         fields = '__all__'
 
+        def validate_email(self, value):
+            '''This method validates the email field.'''
+            if "hospital.com" in value:
+                return value
+            raise serializers.ValidationError(
+                'El correos debe incluir "hospital.com"')
+
 
 class DepartmentSerializer(serializers.ModelSerializer):
     '''This serializer class is used to convert the Department model to JSON format.'''
