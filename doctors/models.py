@@ -1,4 +1,6 @@
 ''' This file contains the models for the doctors app. '''
+from datetime import date
+
 from django.db import models
 
 # Create your models here.
@@ -13,6 +15,7 @@ class Doctor(models.Model):
     email = models.EmailField()
     address = models.TextField()
     biography = models.TextField()
+    start_date = models.DateField(default=date.today)
     is_on_vacation = models.BooleanField(default=False)
 
 
